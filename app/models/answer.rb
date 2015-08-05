@@ -4,5 +4,5 @@ class Answer < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
 
-  validates_presence_of :author_id, :question_id, :body, :best_answer, :created_at, :updated_at
+  validates_presence_of :author_id, :question_id, :body
 end
