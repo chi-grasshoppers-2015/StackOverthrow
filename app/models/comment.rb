@@ -1,3 +1,7 @@
 class Comment < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :author, class_name: "User"
+  belongs_to :commentable, polymorphic: true
+  has_many :votes, as: :votable
+
+  validates_presence_of :body, :author_id, :commentable_id, :commentable_type, :created_at, :updated_at
 end
