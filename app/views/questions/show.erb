@@ -1,13 +1,21 @@
 <div class="container">
 
   <h1><%= @question.title %></h1>
-  <div class="voting-area">
-    <span class="up-vote"></span>
-    <span class="score"></span>
-    <span class="down-vote"></span>
-  </div>
-  <div class="question-body">
-    <%= @question.body %>
+  <%= erb :"_post", locals: {post: @question, post_type: "Question" } %>
+
+  <div class="answers">
+    <%= erb :"answers/_listing", locals: {answers: @question.answers} %>
   </div>
 
+  <% if logged_in? %>
+  <div class="new-answer-form">
+    <h3>Your Answer</h3>
+    <form action="questions/<%= @question.id %>/answers" method="POST">
+      <textarea name="answer[body]"></textarea>
+      <input type="submit" value="Submit your answer">
+    </form>
+  </div>
+  <% else %>
+    <a href="/sessions/new">Log in to answer this question.</a>
+  <% end %>
 </div>

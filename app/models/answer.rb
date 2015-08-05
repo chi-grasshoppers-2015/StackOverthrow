@@ -5,4 +5,7 @@ class Answer < ActiveRecord::Base
   has_many :votes, as: :votable
 
   validates_presence_of :author_id, :question_id, :body
+
+  include Postable
+
 end
