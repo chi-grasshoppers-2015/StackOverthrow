@@ -1,10 +1,9 @@
 <div class="container">
   <h1>Welcome to StackOverthrow!</h1>
 
+  <a href="/questions/new">Create a new question</a>
   <h3>Most Recent Questions</h3>
 
   <%= erb :"questions/_listing", locals: {questions: @questions} %>
-
-  <a href="/questions/new">Create a new question</a>
 
 </div>
