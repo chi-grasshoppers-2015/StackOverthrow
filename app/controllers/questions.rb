@@ -12,7 +12,7 @@ post '/questions' do
   params[:question][:author_id] = session[:uid]
   @question = Question.new(params[:question])
   if @question.save
-    redirect "/question/#{@question.id}"
+    redirect "/questions/#{@question.id}"
   else
     erb :"questions/new"
   end
