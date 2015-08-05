@@ -15,12 +15,12 @@ gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 
 gem 'rake'
-
+gem 'faker'
 gem 'bcrypt'
 
 gem 'shotgun'
 
 group :test do
-  gem 'faker'
+  # gem 'faker'
   gem 'rspec'
 end
