@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
     self.hashed_password = @password
   end
 
-  def self.create(username, new_password, email)
-    @user = User.new(username: username, email: email, password: new_password)
+  def self.create(user = {})
+    @user = User.new(user)
     @user.save!
   end
 
