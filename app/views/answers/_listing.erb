@@ -1,0 +1,7 @@
+<ul>
+  <% answers.each do |answer| %>
+  <li>
+    <%= erb :post, locals: { post: answer } %>
+  </li>
+  <% end %>
+</ul>

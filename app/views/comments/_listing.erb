@@ -1,0 +1,5 @@
+<ul>
+  <% comments.each do |comment| %>
+  <li><%= comment.votes.count %> <%= comment.body %> - <%= comment.author_username %> - <%= comment.formatted_post_date %></li>
+  <% end %>
+</ul>
