@@ -4,7 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.integer :author_id, null: false
       t.integer :question_id, null: false
       t.string :body, null: false
-      t.boolean :best_answer, null: false, default: false
+      t.boolean :best_answer, default: false
 
       t.timestamps null: false
     end
