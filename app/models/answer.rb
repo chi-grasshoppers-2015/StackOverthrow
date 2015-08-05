@@ -7,4 +7,5 @@ class Answer < ActiveRecord::Base
   validates_presence_of :author_id, :question_id, :body
 
   include Postable
+
 end
