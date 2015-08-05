@@ -1,7 +1,7 @@
 <div class="container">
 
   <h1><%= @question.title %></h1>
-  <%= erb :"_post", locals: {post: @question} %>
+  <%= erb :"_post", locals: {post: @question, post_type: "Question" } %>
 
   <div class="answers">
     <%= erb :"answers/_listing", locals: {answers: @question.answers} %>

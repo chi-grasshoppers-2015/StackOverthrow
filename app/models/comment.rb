@@ -6,4 +6,13 @@ class Comment < ActiveRecord::Base
   validates_presence_of :body, :author_id, :commentable_id, :commentable_type
 
   include Postable
+
+  def find_redirect_route
+    if self.commentable_type == "Question"
+      return "/questions/#{self.commentable_id}"
+    else
+      return "/questions/#{self.commentable.question.id}"
+    end
+  end
+
 end

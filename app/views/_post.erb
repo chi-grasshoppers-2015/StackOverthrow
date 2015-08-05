@@ -11,4 +11,10 @@
 </div>
 <div class="post-comments">
   <%= erb :"comments/_listing", locals: {comments: post.comments} %>
+  <form action="/comments" method="POST">
+    <input type="hidden" name="comment[commentable_type]" value="<%= post_type %>" />
+    <input type="hidden" name="comment[commentable_id]" value="<%= post.id %>" />
+    <textarea rows="2" cols="30" name="comment[body]">New comment</textarea>
+    <input type="submit" value="Submit">
+  </form>
 </div>
