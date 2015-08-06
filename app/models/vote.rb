@@ -4,7 +4,8 @@ class Vote < ActiveRecord::Base
 
   validates_presence_of :voter_id, :votable_id, :votable_type, :value
 
-  def tally(post)
-    post.votes.map(:value).reduce(:+)
+  def self.tally(post)
+    votes_values = post.votes.map { |vote| vote.value}
+    votes_values.reduce(:+)
   end
 end

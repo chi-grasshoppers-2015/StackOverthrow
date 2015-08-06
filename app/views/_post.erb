@@ -1,11 +1,9 @@
 <div class="voting-area">
   <span class="up-vote">
-
-
-
+    <%= erb :"votes/_up_vote", locals: {post: post} %>
   </span>
-  <span class="score"><%= post.tally %></span>
-  <span class="down-vote"></span>
+  <span class="score"><%= Vote.tally(post) %></span>
+  <span class="down-vote"><%= erb :"votes/_down_vote", locals: {post: post} %></span>
 </div>
 <div class="post-body">
   <%= post.body %>
