@@ -1,5 +1,5 @@
 post '/comments' do
-  if @user
+  if logged_in?
     @user = current_user
     params[:comment][:author_id] = @user.id
     @comment = Comment.create(params[:comment])
@@ -20,7 +20,7 @@ end
 
 put '/comments/:comment_id' do
   @comment = Comment.find(params[:comment_id])
-  @comment.update(params[:comment])
+  @comment.update(body: params[:comment])
   if @comment.commentable_type == "Question"
     redirect "/questions/#{@comment.commentable_id}##{@comment.id}"
   else

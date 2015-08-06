@@ -1,4 +1,4 @@
-<form action="/comments/<%=@comment.id%>" method="POST">
+<form class="edit-comment-form" action="/comments/<%=@comment.id%>" method="POST">
   <input type="hidden" name="_method" value="PUT">
   <textarea cols="30" name="comment[body]"><%= @comment.body %></textarea>
   <input type="submit" value="Submit">
