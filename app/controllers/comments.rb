@@ -3,7 +3,13 @@ post '/comments' do
     @user = current_user
     params[:comment][:author_id] = @user.id
     @comment = Comment.create(params[:comment])
-    redirect @comment.find_redirect_route #finds route for the comment's answer or question
+    if request.xhr?
+      p @comment
+      p params
+      erb :"comments/_listing", layout: false, locals: { comment: @comment }
+    else
+      redirect @comment.find_redirect_route #finds route for the comment's answer or question
+    end
   else
     erb :"sessions/new"
   end
