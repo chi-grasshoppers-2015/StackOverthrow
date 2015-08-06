@@ -20,10 +20,11 @@
 <body>
   <div id="topbar-wrapper">
     <div id="topbar">
+      <a href="/"><img src="/assets/stackoverthrow.png" alt="gumbercules"height="25"></a>
 
       <div id="topbar-links">
-
         <% if logged_in? %>
+          <a href="/users/<%= current_user.id %>">Profile</a>
           <form action='/sessions' method='post'>
             <input name="_method" type="hidden" value="delete" />
             <input type="submit" value="Sign out">
@@ -32,13 +33,12 @@
           <a href='/sessions/new'>Sign in</a>
           <a href='/users/new'>Sign up</a>
         <% end %>
-
       </div>
     </div>
   </div>
 
   <header>
-    <a id="homelink" href="/" ><h1>Stack<span>Overthrow</span></h1></a>
+    <a href="/"><h1>Stack<span>Overthrow</span> <img src="/assets/stackoverthrow.png" alt="gumbercules" height="40px"></h1></a>
     <nav>
       <a class="nav-link" href="#">awesome</a>
       <a class="nav-link" href="#">cool</a>
