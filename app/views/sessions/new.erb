@@ -1,7 +1,10 @@
-<h1>Log in to your StackOverthrow Account</h1>
-
-<form action="/sessions" method="POST">
-  <input type="text" name="user[username]" placeholder="Username">
-  <input type="text" name="user[password]" placeholder="Password">
-  <input type="submit" value="Log In">
-</form>
+<p class="form-header">Log in to continue to <span>Stack Overthrow</span></p>
+<div id="form-container">
+  <form action="/sessions" method="POST">
+    <label for="user_username">Username</label>
+    <input type="text" name="user[username]" placeholder="nick.for.president">
+    <label for="user_password">Password</label>
+    <input type="password" name="user[password]" placeholder="12345">
+    <input type="submit" value="Log in">
+  </form>
+</div>
