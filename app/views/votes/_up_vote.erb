@@ -1,0 +1,28 @@
+  <% if logged_in? %>
+   <% if match_voter_id(post) && find_vote(post) == 1 %>
+    <form action="/votes" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
+      <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">
+      <input type="hidden" name="vote[voter_id]" value="<%=current_user.id%>">
+      <input class="up_arrow_highlight" type="submit" value="UP1">
+    </form>
+   <% elsif match_voter_id(post) && find_vote(post) == -1 %>
+    <form action="/votes" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
+      <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">
+      <input type="hidden" name="vote[voter_id]" value="<%=current_user.id%>">
+      <input type="hidden" name="vote[value]" value="1">
+      <input class="up_arrow" type="submit" value="UP2">
+    </form>
+   <% else %>
+    <form action="/votes" method="POST">
+      <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
+      <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">
+      <input type="hidden" name="vote[voter_id]" value="<%=current_user.id%>">
+      <input type="hidden" name="vote[value]" value="1">
+      <input class="up_arrow" type="submit" value="UP3">
+    </form>
+  <% end %>
+<% end %>
