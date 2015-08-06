@@ -45,26 +45,32 @@ module Seed
     end
 
     1000.times do
+      value_num = [1,-1].sample
       user = User.all.sample
       question = Question.all.sample
       Vote.create(voter_id: user.id,
-                  votable_id: question.id ,
+                  votable_id: question.id,
+                  value: value_num,
                   votable_type: "Question")
     end
 
     1000.times do
+      value_num = [1,-1].sample
       user = User.all.sample
       answer = Answer.all.sample
       Vote.create(voter_id: user.id,
-                  votable_id: answer.id ,
+                  votable_id: answer.id,
+                  value: value_num,
                   votable_type: "Answer")
     end
 
     1000.times do
+      value_num = [1,-1].sample
       user = User.all.sample
       comment = Comment.all.sample
       Vote.create(voter_id: user.id,
-                  votable_id: comment.id ,
+                  votable_id: comment.id,
+                  value: value_num,
                   votable_type: "Comment")
     end
 
