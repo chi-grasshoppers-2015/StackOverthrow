@@ -230,7 +230,9 @@ footer {
 }
 
 #comment-wrapper {
-  margin: 20px 0;
+  margin: 10px 0 10px;
+  border-bottom: 1px solid #EFEFEF;
+  padding: 10px 0 20px;
 }
 
 .comment-body{
