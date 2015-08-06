@@ -30,7 +30,9 @@
   vertical-align: middle;
 }
 
-#topbar-links a {
+#topbar-links a, #topbar-links input[type=submit] {
+  background: none;
+  border: none;
   vertical-align: middle;
   color: #fff;
   display: inline-block;
@@ -48,6 +50,14 @@
 
 #topbar-links form{
   display: inline-block;
+}
+
+#topbar-links input[type=submit]{
+
+}
+
+header img {
+  display:inline-block;
 }
 
 header {
