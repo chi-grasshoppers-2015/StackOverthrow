@@ -1,6 +1,6 @@
 get '/users/new' do
   @user = User.new
-  erb :"users/new"
+  erb :"users/new", layout: :sign_up_in_layout
 end
 
 post '/users' do
@@ -8,7 +8,7 @@ post '/users' do
   if @user.save
     redirect '/sessions/new'
   else
-    erb :"users/new"
+    erb :"users/new", layout: :sign_up_in_layout
   end
 end
 
