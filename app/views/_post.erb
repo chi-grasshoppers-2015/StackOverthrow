@@ -26,6 +26,9 @@
       <p><a href="/users/<%= post.author_id %>"><%= post.author_username %></a></p>
     </div>
   </div>
+
+
+
   <div id="<%= post.id %>" class="edit-answer-button" >
   <% if logged_in? && user_is_author(post.author_id) && post_type == "Answer"%>
     <a href="/answers/<%=post.id%>/edit">Edit</a>

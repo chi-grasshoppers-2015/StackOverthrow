@@ -1,20 +1,23 @@
-<ul>
-  <% comments.each do |comment| %>
-  <li>
-    <section id="vote-comment-column">
-      <div class="voting-area">
-        <span class="up-vote">
-          <%= erb :"votes/_up_vote", locals: {post: comment} %>
-        </span>
-        <span class="score">
-          <%= Vote.tally(comment) %>
-        </span>
-        <span class="down-vote">
-          <%= erb :"votes/_down_vote", locals: {post: comment} %>
-        </span>
-      </div>
-    </section>
-    <%= comment.body %> - <%= comment.author_username %> - <%= comment.formatted_post_date %>
+<% comments.each do |comment| %>
+  <div id="comment-wrapper">
+
+    <div class="voting-area">
+      <span class="up-vote">
+        <%= erb :"votes/_up_vote", locals: {post: comment} %>
+      </span>
+      <span class="score">
+        <%= Vote.tally(comment) %>
+      </span>
+      <span class="down-vote">
+        <%= erb :"votes/_down_vote", locals: {post: comment} %>
+      </span>
+    </div>
+
+    <div class="comment-body">
+      <p><%= comment.body %></p>
+      <span><%= comment.author_username %> - <%= comment.formatted_post_date %></span>
+    </div>
+
     <div class="edit-comment-button">
       <% if logged_in? && user_is_author(comment.author_id) %>
         <a href="/comments/<%=comment.id%>/edit">Edit</a>
@@ -23,8 +26,10 @@
           <input type="hidden" name="comment" value="<%=comment.id%>">
           <input type="submit" value="DELETE">
         </form>
-    <% end %>
+      <% end %>
     </div>
-  <% end %>
-  </li>
-</ul>
+
+  </div>
+<% end %>
+
+
