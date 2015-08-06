@@ -10,12 +10,15 @@
   <% if logged_in? %>
   <div class="new-answer-form">
     <h3>Your Answer</h3>
-    <form action="/questions/<%= @question.id %>/answers" method="POST">
+    <form action="/answers" method="POST">
       <textarea name="answer[body]"></textarea>
+      <input type="hidden" name="question[id]" value="<%=@question.id%>">
       <input type="submit" value="Submit your answer">
     </form>
   </div>
   <% else %>
     <a href="/sessions/new">Log in to answer this question.</a>
   <% end %>
+
 </div>
+
