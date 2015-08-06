@@ -10,3 +10,16 @@ post '/answers' do
     erb :"questions/show"
   end
 end
+
+get '/answers/:answer_id/edit' do
+  @answer = Answer.find(params[:answer_id])
+  erb :"answers/edit"
+end
+
+put '/answers/:answer_id' do
+  @answer = Answer.find(params[:answer_id])
+  @answer.update(params[:answer])
+  redirect "/questions/#{@answer.question_id}##{@answer.id}"
+end
+
+

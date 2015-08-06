@@ -4,3 +4,20 @@ post '/comments' do
   @comment = Comment.create(params[:comment])
   redirect @comment.find_redirect_route #finds route for the comment's answer or question
 end
+
+get '/comments/:comment_id/edit' do
+  @comment = Comment.find(params[:comment_id])
+  erb :"comments/edit"
+end
+
+put '/comments/:comment_id' do
+  @comment = Comment.find(params[:comment_id])
+  @comment.update(params[:comment])
+  if @comment.commentable_type == "Question"
+    redirect "/questions/#{@comment.commentable_id}##{@comment.id}"
+  else
+    answer = Answer.find(@comment.commentable_id)
+    redirect "/questions/#{answer.question_id}##{@comment.id}"
+  end
+end
+
