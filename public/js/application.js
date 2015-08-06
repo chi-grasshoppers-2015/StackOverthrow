@@ -81,7 +81,7 @@ var handleNewCommentRequest = function(event) {
     data: { comment: commentParams }
   });
   newCommentRequest.done(function(response) {
-    $('.post-comments > ul').append(response);
+    $('#post-comments-' + commentableId + ' > ul').append(response);
   });
   $(this).find('textarea').val("");
 }
