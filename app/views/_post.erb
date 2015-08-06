@@ -1,34 +1,38 @@
-<div class="voting-area">
-  <span class="up-vote">
+<section id="vote-column">
+  <div class="voting-area">
+    <span class="up-vote">
     <%= erb :"votes/_up_vote", locals: {post: post} %>
-  </span>
-  <span class="score"><%= Vote.tally(post) %></span>
-  <span class="down-vote"><%= erb :"votes/_down_vote", locals: {post: post} %></span>
-</div>
-<div class="post-body">
-  <%= post.body %>
-</div>
-<div class="post-author">
-  Asked on <%= post.formatted_post_date %> by: <%= post.author_username %>
-</div>
-<div class="edit-answer-button">
-<% if logged_in? && user_is_author(post.author_id) %>
-  <a href="/answers/<%=post.id%>/edit">Edit</a>
-  <form action="/answers" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="answer" value="<%=post.id%>">
-    <input type="submit" value="DELETE">
-  </form>
-<% end %>
-</div>
-<div class="post-comments">
-  <%= erb :"comments/_listing", locals: {comments: post.comments} %>
-  <form action="/comments" method="POST">
-    <input type="hidden" name="comment[commentable_type]" value="<%= post_type %>" />
-    <input type="hidden" name="comment[commentable_id]" value="<%= post.id %>" />
-    <textarea rows="2" cols="30" name="comment[body]" placeholder="New comment"></textarea>
-    <input type="submit" value="Submit">
-  </form>
-</div>
+    </span>
+    <span class="score"><%= Vote.tally(post) %></span>
+    <span class="down-vote"><%= erb :"votes/_down_vote", locals: {post: post} %></span>
+  </div>
+</section>
 
+<section id="post-content">
+  <div class="post-body">
+    <%= post.body %>
+  </div>
+  <div class="post-author">
+    Asked on <%= post.formatted_post_date %> by: <%= post.author_username %>
+  </div>
+  <div class="edit-answer-button">
+  <% if logged_in? && user_is_author(post.author_id) %>
+    <a href="/answers/<%=post.id%>/edit">Edit</a>
+    <form action="/answers" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="hidden" name="answer" value="<%=post.id%>">
+      <input type="submit" value="DELETE">
+    </form>
+  <% end %>
+  </div>
+  <div class="post-comments">
+    <%= erb :"comments/_listing", locals: {comments: post.comments} %>
+    <form action="/comments" method="POST">
+      <input type="hidden" name="comment[commentable_type]" value="<%= post_type %>" />
+      <input type="hidden" name="comment[commentable_id]" value="<%= post.id %>" />
+      <textarea rows="2" cols="30" name="comment[body]" placeholder="New comment"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</section>
 
