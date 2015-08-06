@@ -21,8 +21,6 @@
   display: inline-block;
 }
 
-
-
 #topbar-links {
   display: inline-block;
   position: absolute;
@@ -40,7 +38,7 @@
   -webkit-transition: background, 0.15s, ease;
   padding: 4px;
 }
-#topbar-links a:hover {
+#topbar-links a:hover, #topbar-links input[type=submit]:hover {
   display: inline-block;
   text-decoration: none;
   background-color: #f90;
@@ -75,7 +73,18 @@ header h1, header nav {
   display: inline-block;
   position: absolute;
   bottom: 50px;
+}
 
+
+header h1{
+  height: 40px;
+  padding: 0px 0px 8px 0px;
+}
+
+header h1:hover {
+  height: 38px;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 2px solid #E7E7E7;
 }
 
 #homelink {
@@ -89,8 +98,6 @@ h1 {
 h1 span {
   color: #f90;
 }
-
-
 
 header nav {
   right: 0px;
@@ -108,7 +115,6 @@ header nav {
 .nav-link:hover {
   background-color: #f90;
 }
-
 
 
 #main {
