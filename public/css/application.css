@@ -157,19 +157,48 @@ footer {
 
 #vote-column {
   display: inline-block;
-  width: 30px;
+  width: 9.5%;
   height: 500px;
-  background-color: green;
+  /*background-color: green;*/
 }
 
 #post-content {
-  background-color: red;
+  /*background-color: red;*/
   display: inline-block;
-  width: 400px;
+  width: 85%;
+  margin: 0 auto;
   vertical-align: top;
 }
 
+.post-body {
+  /*padding: 10px;*/
+}
 
+.post-author {
+  padding: 5px;
+  width: 120px;
+  font-size: 12px;
+  margin: 5px 0;
+  line-height: 1.3;
+}
+
+.post-author a {
+  text-decoration: none;
+  color: #07c;
+}
+
+.post-author a:hover {
+  color: #30a7fc;
+}
+
+.question-author-box {
+  background-color: #e0eaf1;
+}
+
+.post-comments {
+  padding: 5px 0;
+  border-top: 1px solid #e5e5e5;
+}
 
 /* ------------------------------------------------------------------------- */
 

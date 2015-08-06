@@ -11,9 +11,16 @@
 <section id="post-content">
   <div class="post-body">
     <%= post.body %>
-  </div>
-  <div class="post-author">
-    Asked on <%= post.formatted_post_date %> by: <%= post.author_username %>
+    <% if post_type == "Question" %>
+    <div class="post-author question-author-box">
+      asked
+    <% else %>
+    <div class="post-author">
+      answered
+    <% end %>
+      on <%= post.formatted_post_date %>
+      <p><a href="/users/<%= post.author_id %>"><%= post.author_username %></a></p>
+    </div>
   </div>
   <div class="edit-answer-button">
   <% if logged_in? && user_is_author(post.author_id) %>
