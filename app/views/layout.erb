@@ -25,7 +25,7 @@
   </div>
 
   <header>
-    <h1>Welcome to StackOverthrow!</h1>
+    <a id="homelink" href="/" ><h1>Stack<span>Overthrow</span></h1></a>
     <nav>
       <a class="nav-link" href="#">awesome</a>
       <a class="nav-link" href="#">cool</a>
@@ -35,7 +35,20 @@
 
 
   <div id="main">
-    <%= yield %>
+    <section id="right">
+      <div class="gray-ad">
+        <h5>Nickle ads</h5>
+        <p>Need to spend extra money?</p>
+        <p>Email at nbkincaid@gmail.com for ways to get rid of excess cash.</p>
+      </div>
+
+      <div class="blue-ad">
+
+      </div>
+    </section>
+    <section id="left">
+      <%= yield %>
+    </section>
   </div>
 
   <div id="footer-wrapper">
