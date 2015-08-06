@@ -9,6 +9,14 @@
     <span class="down-vote">
       <%= erb :"votes/_down_vote", locals: {post: post} %>
     </span>
+    <% if post.class == Answer %>
+      <% if current_user.id == post.question.author_id %>
+        <a href="/answers/<%=post.id%>/best_answer"><p>✔</p></a>
+      <% end %>
+      <% if post.best_answer %>
+        <p>✔</p>
+      <% end %>
+    <%end%>
   </div>
 </section>
 
@@ -39,7 +47,7 @@
     </form>
   <% end %>
   </div>
-  <div class="post-comments">
+  <div id="post-comments-<%= post.id %>" class="post-comments">
     <ul>
     <% post.comments.each do |comment| %>
       <%= erb :"comments/_listing", locals: {comment: comment} %>
