@@ -14,9 +14,15 @@ helpers do
     matching_votes[0].value if matching_votes[0]
   end
 
-  # def find_vote(post)
-  #   votes = post.votes.map{}
-  # end
+  def find_vote(post)
+    matching_vote = post.votes.map do |vote|
+      if vote.voter_id == current_user.id
+        vote
+      end
+    end
+    matching_vote.compact!
+    matching_vote[0] if matching_vote[0]
+  end
 
   def find_question_id(vote)
     object_class = vote.votable_type

@@ -1,6 +1,6 @@
   <% if logged_in? %>
    <% if match_voter_id(post) && find_vote_value(post) == -1 %>
-    <form action="/votes" method="POST">
+    <form action="/votes/<%= find_vote(post).id%>" method="POST">
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
       <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">
@@ -8,7 +8,7 @@
       <input class="down_arrow_highlight" type="submit" value="Down1">
     </form>
    <% elsif match_voter_id(post) && find_vote_value(post) == 1 %>
-    <form action="/votes" method="POST">
+    <form action="/votes/<%= find_vote(post).id%>" method="POST">
       <input type="hidden" name="_method" value="PUT">
       <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
       <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">
