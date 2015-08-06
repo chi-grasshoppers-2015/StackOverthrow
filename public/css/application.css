@@ -209,17 +209,46 @@ footer {
 #vote-column {
   display: inline-block;
   width: 9.5%;
-  height: 500px;
+ /* height: 500px;*/
   /*background-color: green;*/
+  margin-bottom: 20px;
 }
 
 #post-content {
   /*background-color: red;*/
   display: inline-block;
-  width: 85%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 0 auto 20px;
+
   vertical-align: top;
 }
+
+.voting-area {
+  /*background-color: yellow;*/
+  display: inline-block;
+  width: 10%;
+}
+
+#comment-wrapper {
+  margin: 10px 0 10px;
+  border-bottom: 1px solid #EFEFEF;
+  padding: 10px 0 20px;
+}
+
+.comment-body{
+  display: inline-block;
+  width: 80%;
+  vertical-align: top;
+}
+
+.comment-body p{
+  vertical-align: top;
+}
+
+.post-comments {
+  background-color: white;
+}
+
 
 .post-body {
   /*padding: 10px;*/
@@ -252,6 +281,12 @@ footer {
   padding: 5px 0;
   border-top: 1px solid #e5e5e5;
   clear: both;
+}
+
+#answers-header {
+  margin: 20px 0 40px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* ------------------------------------------------------------------------- */
