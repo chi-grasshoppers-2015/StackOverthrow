@@ -1,8 +1,12 @@
-<h1>Create a StackOverthrow Account</h1>
-
-<form action="/users" method="POST">
-  <input type="text" name="user[email]" value="<%= @user.email %>" placeholder="Email">
-  <input type="text" name="user[username]" value="<%= @user.username %>" placeholder="Username">
-  <input type="text" name="user[password]" placeholder="Password">
-  <input type="submit" value="Create Account">
-</form>
+<p class="form-header">Sign up to continue to <span>Stack Overthrow</span></p>
+<div id="form-container">
+  <form action="/users" method="POST">
+    <label for="user_username">Username</label>
+    <input type="text" name="user[username]" value="<%= @user.username %>" placeholder="nick.for.president">
+    <label for="user_email">Email</label>
+    <input type="text" name="user[email]" value="<%= @user.email %>" placeholder="you@example.org">
+    <label for="user_password">Password</label>
+    <input type="text" name="user[password]" placeholder="12345">
+    <input type="submit" value="Sign up">
+  </form>
+</div>
