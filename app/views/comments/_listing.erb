@@ -1,34 +1,30 @@
-<ul>
-  <% comments.each do |comment| %>
-    <li>
-      <section id="vote-comment-column">
-        <div class="voting-area">
-          <span class="up-vote">
-            <%= erb :"votes/_up_vote", locals: {post: comment} %>
-          </span>
-          <span class="score">
-            <%= Vote.tally(comment) %>
-          </span>
-          <span class="down-vote">
-            <%= erb :"votes/_down_vote", locals: {post: comment} %>
-          </span>
-        </div>
-      </section>
-      <div id="comment-body-<%= comment.id %>">
-      <span><%= comment.body %></span> - <%= comment.author_username %> - <%= comment.formatted_post_date %>
-      </div>
-      <div id="<%= comment.id %>"class="edit-comment-button">
-        <% if logged_in? && user_is_author(comment.author_id) %>
-          <a href="/comments/<%=comment.id%>/edit">Edit</a>
-          <form action="/comments" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="comment" value="<%=comment.id%>">
-            <input type="submit" value="DELETE">
-          </form>
-        <% end %>
-      </div>
-    </li>
+<li>
+  <section id="vote-comment-column">
+    <div class="voting-area">
+      <span class="up-vote">
+        <%= erb :"votes/_up_vote", locals: {post: comment} %>
+      </span>
+      <span class="score">
+        <%= Vote.tally(comment) %>
+      </span>
+      <span class="down-vote">
+        <%= erb :"votes/_down_vote", locals: {post: comment} %>
+      </span>
+    </div>
+  </section>
+  <div id="comment-body-<%= comment.id %>">
+  <span><%= comment.body %></span> - <%= comment.author_username %> - <%= comment.formatted_post_date %>
+  </div>
+  <div id="<%= comment.id %>"class="edit-comment-button">
+    <% if logged_in? && user_is_author(comment.author_id) %>
+      <a href="/comments/<%=comment.id%>/edit">Edit</a>
+      <form action="/comments" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="comment" value="<%=comment.id%>">
+        <input type="submit" value="DELETE">
+      </form>
   <% end %>
-</ul>
+  </div>
+</li>
 
 
