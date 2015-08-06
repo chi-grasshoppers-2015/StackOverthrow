@@ -176,10 +176,10 @@ footer {
 
 .post-author {
   padding: 5px;
-  width: 120px;
   font-size: 12px;
   margin: 5px 0;
   line-height: 1.3;
+  text-align: right;
 }
 
 .post-author a {
@@ -193,6 +193,8 @@ footer {
 
 .question-author-box {
   background-color: #e0eaf1;
+  width: 120px;
+  text-align: left;
 }
 
 .post-comments {
