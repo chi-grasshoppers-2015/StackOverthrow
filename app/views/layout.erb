@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,6 +18,30 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <div id="topbar-wrapper">
+    <div id="topbar">
+      <h4>Some text to give height</h4>
+    </div>
+  </div>
+
+  <header>
+    <h1>Welcome to StackOverthrow!</h1>
+    <nav>
+      <a class="nav-link" href="#">awesome</a>
+      <a class="nav-link" href="#">cool</a>
+      <a class="nav-link" href="/questions/new">Create a new question</a>
+    </nav>
+  </header>
+
+
+  <div id="main">
+    <%= yield %>
+  </div>
+
+  <div id="footer-wrapper">
+    <footer>
+
+    </footer>
+  </div>
 </body>
 </html>
