@@ -257,4 +257,42 @@ footer {
 /* ------------------------------------------------------------------------- */
 
 
+/* ----------------------------USER PROFILE -------------------------------- */
+
+.profile-question-list{
+  overflow: scroll;
+  height: 300px;
+}
+
+.profile-score{
+  display: inline-block;
+  border: 2px solid;
+  text-align: center;
+}
+.answer-count{
+  display: inline-block;
+  border: 2px solid;
+  text-align: center;
+}
+
+.comment-count{
+  display: inline-block;
+  border: 2px solid;
+  text-align: center;
+}
+
+.date {
+  display: inline-block;
+  border: 2px solid;
+  float:right;
+}
+
+
+.profile-answer-list{
+  overflow: scroll;
+  height: 300px;
+}
+
+
+/* ------------------------------------------------------------------------- */
 
