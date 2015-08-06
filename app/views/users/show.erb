@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="profile_nav">
+    <a href="#summary">Summary</a>
+    <a href="#questions">Questions</a>
+    <a href="#answers">Answers</a>
+    <a href="#comments">Comments</a>
+  </div>
+
+  <div class="profile_content">
+    <div id="summary">
+
+
+
+    </div>
+    <div id="questions">
+
+      <h4><%=@user.username %>'s Questions</h4>
+      <ul class="profile-question-list">
+        <% @user.questions.each do |question| %>
+        <li >
+        <div class = "profile-score">
+          <%= Vote::tally(question) %>
+          <p>Votes</p>
+        </div>
+        <div class = "answer-count">
+          <%= question.answers.count %>
+          <p>Answers</p>
+        </div>
+        <div class = "comment-count">
+          <%= question.comments.count %>
+          <p>Comments</p>
+        </div>
+          <a href="/questions/<%= question.id %>"><%= question.title %></a>
+          <div class = "date">
+            <%= question.formatted_post_date %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+
+    </div>
+    <div id="answers">
+      <h4><%=@user.answers.count %> Answers</h4>
+      <ul class="profile-answer-list">
+        <% @user.answers.each do |answer| %>
+        <li >
+        <div class = "profile-score">
+          <%= Vote::tally(answer) %>
+          <p>Votes</p>
+        </div>
+        <div class = "comment-count">
+          <%= answer.comments.count %>
+          <p>Comments</p>
+        </div>
+          <a href="/questions/<%= answer.question.id %>"><%= answer.question.title %></a>
+          <div class = "date">
+            <%= answer.formatted_post_date %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+
+    </div>
+
+
+    </div>
+    <div id="comments">
+
+
+
+    </div>
+  </div>
+</div>
