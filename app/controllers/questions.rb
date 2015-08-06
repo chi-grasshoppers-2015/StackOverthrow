@@ -1,5 +1,5 @@
 get '/questions' do
-  @questions = Question.all.reverse
+  @questions = Question.all.reverse #shows newest entry first
   erb :"questions/index"
 end
 
@@ -23,14 +23,4 @@ get '/questions/:id' do
   erb :"questions/show"
 end
 
-post '/questions/:id/answers' do
-  params[:answer][:author_id] = session[:uid]
-  @question = Question.find(params[:id])
-  params[:answer][:question_id] = @question.id
-  @answer = Answer.new(params[:answer])
-  if @answer.save
-    redirect "/questions/#{@question.id}##{@answer.id}"
-  else
-    erb :"questions/show"
-  end
-end
+

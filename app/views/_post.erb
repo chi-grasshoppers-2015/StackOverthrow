@@ -9,6 +9,11 @@
 <div class="post-author">
   Asked on <%= post.formatted_post_date %> by: <%= post.author_username %>
 </div>
+<div class="edit-answer-button">
+<% if user_is_author(post.author_id) %>
+  <a href="/answers/<%=post.id%>/edit">Edit</a>
+<% end %>
+</div>
 <div class="post-comments">
   <%= erb :"comments/_listing", locals: {comments: post.comments} %>
   <form action="/comments" method="POST">
@@ -18,3 +23,5 @@
     <input type="submit" value="Submit">
   </form>
 </div>
+
+
