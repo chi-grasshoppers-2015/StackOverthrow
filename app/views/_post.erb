@@ -10,7 +10,7 @@
   Asked on <%= post.formatted_post_date %> by: <%= post.author_username %>
 </div>
 <div class="edit-answer-button">
-<% if user_is_author(post.author_id) %>
+<% if logged_in? && user_is_author(post.author_id) %>
   <a href="/answers/<%=post.id%>/edit">Edit</a>
   <form action="/answers" method="POST">
     <input type="hidden" name="_method" value="DELETE">

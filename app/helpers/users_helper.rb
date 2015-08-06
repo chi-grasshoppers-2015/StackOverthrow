@@ -2,7 +2,7 @@ helpers do
 
 
   def logged_in?
-    current_user
+    session[:uid]
   end
 
   def current_user
