@@ -1,9 +1,8 @@
-<div class="new-answer-form">
+<div class="edit-answer-form">
   <h3>Your Answer</h3>
   <form action="/answers/<%=@answer.id%>" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <textarea name="answer[body]"><%=@answer.body%></textarea>
-    <input type="submit" value="Submit your answer">
+    <input type="submit" value="Save your answer">
   </form>
-
 </div>

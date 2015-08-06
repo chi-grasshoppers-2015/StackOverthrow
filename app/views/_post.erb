@@ -13,8 +13,8 @@
 </section>
 
 <section id="post-content">
-  <div class="post-body">
-    <p><%= post.body %></p>
+  <div id="body-<%= post.id %>" class="post-body">
+    <span><%= post.body %></span>
     <% if post_type == "Question" %>
     <div class="post-author question-author-box">
       asked
@@ -26,9 +26,8 @@
       <p><a href="/users/<%= post.author_id %>"><%= post.author_username %></a></p>
     </div>
   </div>
-
-  <div class="edit-answer-button">
-  <% if logged_in? && user_is_author(post.author_id) && post_type == "Answer" %>
+  <div id="<%= post.id %>" class="edit-answer-button" >
+  <% if logged_in? && user_is_author(post.author_id) && post_type == "Answer"%>
     <a href="/answers/<%=post.id%>/edit">Edit</a>
     <form action="/answers" method="POST">
       <input type="hidden" name="_method" value="DELETE">

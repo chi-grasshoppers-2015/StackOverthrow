@@ -21,8 +21,12 @@ end
 
 put '/answers/:answer_id' do
   @answer = Answer.find(params[:answer_id])
-  @answer.update(params[:answer])
-  redirect "/questions/#{@answer.question_id}##{@answer.id}"
+  @answer.update(body: params[:answer])
+  if request.xhr?
+    status 200
+  else
+    redirect "/questions/#{@answer.question_id}##{@answer.id}"
+  end
 end
 
 delete '/answers' do
