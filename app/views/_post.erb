@@ -9,8 +9,8 @@
 </section>
 
 <section id="post-content">
-  <div class="post-body">
-    <%= post.body %>
+  <div id="body-<%= post.id %>" class="post-body">
+    <span><%= post.body %></span>
     <% if post_type == "Question" %>
     <div class="post-author question-author-box">
       asked
@@ -22,7 +22,7 @@
       <p><a href="/users/<%= post.author_id %>"><%= post.author_username %></a></p>
     </div>
   </div>
-  <div class="edit-answer-button">
+  <div id="<%= post.id %>" class="edit-answer-button">
   <% if logged_in? && user_is_author(post.author_id) %>
     <a href="/answers/<%=post.id%>/edit">Edit</a>
     <form action="/answers" method="POST">
@@ -34,12 +34,14 @@
   </div>
   <div class="post-comments">
     <%= erb :"comments/_listing", locals: {comments: post.comments} %>
-    <form action="/comments" method="POST">
-      <input type="hidden" name="comment[commentable_type]" value="<%= post_type %>" />
-      <input type="hidden" name="comment[commentable_id]" value="<%= post.id %>" />
-      <textarea rows="2" cols="30" name="comment[body]" placeholder="New comment"></textarea>
-      <input type="submit" value="Submit">
-    </form>
+    <% if logged_in? %>
+      <form action="/comments" method="POST">
+        <input type="hidden" name="comment[commentable_type]" value="<%= post_type %>" />
+        <input type="hidden" name="comment[commentable_id]" value="<%= post.id %>" />
+        <textarea rows="2" cols="30" name="comment[body]" placeholder="New comment"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    <% end %>
   </div>
 </section>
 
