@@ -11,6 +11,8 @@
 
   <ul>
     <% @question.answers.each do |answer| %>
+    <% best = @question.answers.find_by(best_answer: true) %>
+    <li><%= best %>
     <li>
       <%= erb :"_post", locals: { post: answer, post_type: "Answer" } %>
     </li>

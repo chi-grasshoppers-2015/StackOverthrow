@@ -12,7 +12,8 @@
     <% if post.class == Answer %>
       <% if current_user.id == post.question.author_id %>
         <a href="/answers/<%=post.id%>/best_answer"><p>✔</p></a>
-      <% else %>
+      <% end %>
+      <% if post.best_answer %>
         <p>✔</p>
       <% end %>
     <%end%>
