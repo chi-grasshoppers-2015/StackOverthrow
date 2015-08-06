@@ -6,7 +6,8 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
-    redirect '/sessions/new'
+    session[:uid] = @user.id
+    redirect '/'
   else
     erb :"users/new", layout: :sign_up_in_layout
   end
