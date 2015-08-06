@@ -1,14 +1,14 @@
   <% if logged_in? %>
-   <% if match_voter_id(post) && find_vote(post) == 1 %>
-    <form action="/votes" method="POST">
+   <% if match_voter_id(post) && find_vote_value(post) == 1 %>
+    <form action="/votes/<%= find_vote(post).id%>" method="POST">
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
       <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">
       <input type="hidden" name="vote[voter_id]" value="<%=current_user.id%>">
       <input class="up_arrow_highlight" type="submit" value="UP1">
     </form>
-   <% elsif match_voter_id(post) && find_vote(post) == -1 %>
-    <form action="/votes" method="POST">
+   <% elsif match_voter_id(post) && find_vote_value(post) == -1 %>
+    <form action="/votes/<%= find_vote(post).id%>" method="POST">
       <input type="hidden" name="_method" value="PUT">
       <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
       <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">

@@ -4,15 +4,24 @@ helpers do
     votes.include?(current_user.id)
   end
 
-  def find_vote(post)
+  def find_vote_value(post)
     matching_votes = post.votes.map do |vote|
       if vote.voter_id == current_user.id
         vote
       end
     end
     matching_votes.compact!
-    p matching_votes
     matching_votes[0].value if matching_votes[0]
+  end
+
+  def find_vote(post)
+    matching_vote = post.votes.map do |vote|
+      if vote.voter_id == current_user.id
+        vote
+      end
+    end
+    matching_vote.compact!
+    matching_vote[0] if matching_vote[0]
   end
 
   def find_question_id(vote)
