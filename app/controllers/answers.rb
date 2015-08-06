@@ -35,3 +35,11 @@ delete '/answers' do
   answer.destroy
   redirect "/questions/#{question.id}"
 end
+
+get '/answers/:answer_id/best_answer' do
+  @answer = Answer.find(params[:answer_id])
+  @answer.best_answer = true
+  redirect "/questions/#{@answer.question.id}"
+end
+
+

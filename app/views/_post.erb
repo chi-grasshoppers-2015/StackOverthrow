@@ -9,6 +9,13 @@
     <span class="down-vote">
       <%= erb :"votes/_down_vote", locals: {post: post} %>
     </span>
+    <% if post.class == Answer %>
+      <% if current_user.id == post.question.author_id %>
+        <a href="/answers/<%=post.id%>/best_answer"><p>✔</p></a>
+      <% else %>
+        <p>✔</p>
+      <% end %>
+    <%end%>
   </div>
 </section>
 
