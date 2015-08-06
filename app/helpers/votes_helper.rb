@@ -24,13 +24,15 @@ helpers do
     matching_vote[0] if matching_vote[0]
   end
 
-  def find_question_id(vote)
+  def find_votable_question_id(vote)
     object_class = vote.votable_type
     object = object_class.constantize.find(vote.votable_id)
     if object_class == "Question"
       object.id
     elsif object_class == "Answer"
       object.question_id
+    elsif object_class == "Comment"
+      find_commentable_question_id(object)
     end
   end
 end
