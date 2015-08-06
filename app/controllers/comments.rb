@@ -21,3 +21,15 @@ put '/comments/:comment_id' do
   end
 end
 
+delete '/comments' do
+  comment = Comment.find(params[:comment])
+  if comment.commentable_type == "Question"
+    question = Question.find(comment.commentable_id)
+    comment.destroy
+    redirect "/questions/#{question.id}"
+  else
+    answer = Answer.find(comment.commentable_id)
+    comment.destroy
+    redirect "/questions/#{answer.question_id}##{answer.id}"
+  end
+end

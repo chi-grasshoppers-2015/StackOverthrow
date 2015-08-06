@@ -22,4 +22,9 @@ put '/answers/:answer_id' do
   redirect "/questions/#{@answer.question_id}##{@answer.id}"
 end
 
-
+delete '/answers' do
+  answer = Answer.find(params[:answer])
+  question = Question.find(answer.question_id)
+  answer.destroy
+  redirect "/questions/#{question.id}"
+end
