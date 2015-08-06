@@ -1,5 +1,4 @@
 post '/answers' do
-  p params
   params[:answer][:author_id] = session[:uid]
   @question = Question.find(params[:question][:id])
   params[:answer][:question_id] = @question.id
@@ -13,7 +12,11 @@ end
 
 get '/answers/:answer_id/edit' do
   @answer = Answer.find(params[:answer_id])
-  erb :"answers/edit"
+  if user_is_author(@answer.author_id)
+    erb :"answers/edit"
+  else
+    erb :"sessions/new"
+  end
 end
 
 put '/answers/:answer_id' do

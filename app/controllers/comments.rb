@@ -7,7 +7,11 @@ end
 
 get '/comments/:comment_id/edit' do
   @comment = Comment.find(params[:comment_id])
-  erb :"comments/edit"
+  if user_is_author(@comment.author_id)
+    erb :"comments/edit"
+  else
+    erb :"sessions/new"
+  end
 end
 
 put '/comments/:comment_id' do

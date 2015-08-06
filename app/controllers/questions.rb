@@ -4,8 +4,12 @@ get '/questions' do
 end
 
 get '/questions/new' do
-  @question = Question.new
-  erb :"questions/new"
+  if logged_in?
+    @question = Question.new
+    erb :"questions/new"
+  else
+    erb :"sessions/new"
+  end
 end
 
 post '/questions' do
