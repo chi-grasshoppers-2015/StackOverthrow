@@ -20,7 +20,20 @@
 <body>
   <div id="topbar-wrapper">
     <div id="topbar">
-      <h4>Some text to give height</h4>
+
+      <div id="topbar-links">
+
+        <% if logged_in? %>
+          <form action='/sessions' method='post'>
+            <input name="_method" type="hidden" value="delete" />
+            <input type="submit" value="Sign out">
+          </form>
+        <% else %>
+          <a href='/sessions/new'>Sign in</a>
+          <a href='/users/new'>Sign up</a>
+        <% end %>
+
+      </div>
     </div>
   </div>
 

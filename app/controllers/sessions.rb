@@ -12,3 +12,8 @@ post '/sessions' do
     erb :"sessions/new", layout: :sign_up_in_layout
   end
 end
+
+delete '/sessions' do
+  session[:uid] = nil
+  redirect "/questions"
+end
