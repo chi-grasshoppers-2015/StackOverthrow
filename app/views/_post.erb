@@ -10,11 +10,10 @@
       <%= erb :"votes/_down_vote", locals: {post: post} %>
     </span>
     <% if post.class == Answer %>
-      <% if current_user.id == post.question.author_id %>
-        <a href="/answers/<%=post.id%>/best_answer"><p>✔</p></a>
-      <% end %>
       <% if post.best_answer %>
         <p>✔</p>
+      <% elsif current_user.id == post.question.author_id %>
+        <a href="/answers/<%=post.id%>/best_answer"><p>Mark as best</p></a>
       <% end %>
     <%end%>
   </div>

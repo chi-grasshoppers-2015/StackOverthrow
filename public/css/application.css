@@ -38,6 +38,7 @@
   -webkit-transition: background, 0.15s, ease;
   padding: 4px;
 }
+
 #topbar-links a:hover, #topbar-links input[type=submit]:hover {
   display: inline-block;
   text-decoration: none;
@@ -48,10 +49,6 @@
 
 #topbar-links form{
   display: inline-block;
-}
-
-#topbar-links input[type=submit]{
-
 }
 
 header img {
@@ -74,7 +71,6 @@ header h1, header nav {
   position: absolute;
   bottom: 50px;
 }
-
 
 header h1{
   height: 40px;
