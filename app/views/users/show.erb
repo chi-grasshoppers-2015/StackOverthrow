@@ -8,7 +8,7 @@
   <div class="profile_content">
     <div id="questions">
 
-      <h4><%=@user.questions.count%> Questions</h4>
+      <h4><span class="count"><%=@user.questions.count%></span> Questions</h4>
       <ul class="profile-question-list">
         <% @user.questions.each do |question| %>
           <div class="row">
@@ -17,15 +17,24 @@
               <%= Vote::tally(question) %>
               <p>Votes</p>
             </div>
-            <div class = "answer-count">
-              <%= question.answers.count %>
-              <p>Answers</p>
-            </div>
+            <% if question.answers.count > 0 %>
+              <div class = "answered-count">
+                <%= question.answers.count %>
+                <p>Answers</p>
+              </div>
+            <% else %>
+              <div class = "answer-count">
+                <%= question.answers.count %>
+                <p>Answers</p>
+              </div>
+            <% end %>
             <div class = "comment-count">
               <%= question.comments.count %>
               <p>Comments</p>
             </div>
+            <div class = "profile-title">
               <a href="/questions/<%= question.id %>"><%= question.title %></a>
+            </div>
               <div class = "date">
                 <%= question.formatted_post_date %>
               </div>
@@ -36,7 +45,7 @@
 
     </div>
     <div id="answers">
-      <h4><%=@user.answers.count %> Answers</h4>
+      <h4><span class="count"><%=@user.answers.count %></span> Answers</h4>
       <ul class="profile-answer-list">
         <% @user.answers.each do |answer| %>
           <div class="row">
@@ -63,7 +72,7 @@
 
     </div>
     <div id="comments">
-      <h4><%=@user.comments.count %> Comments</h4>
+      <h4><span class="count"><%=@user.comments.count %></span> Comments</h4>
       <ul class="profile-answer-list">
         <% @user.comments.each do |comment| %>
           <div class="row">
