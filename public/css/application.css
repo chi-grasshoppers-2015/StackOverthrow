@@ -422,6 +422,16 @@ footer {
 }
 
 #font-awe-button:hover, #font-awe-button span:hover {
+  background: none;
+  background-color: none;
+  border: none;
+  color: #f90;
+}
+
+#font-awe-button:hover, #font-awe-button span:active {
+  background: none;
+  background-color: none;
+  border: none;
   color: #f90;
 }
 /*----------------------------------*/
