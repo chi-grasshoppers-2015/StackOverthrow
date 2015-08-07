@@ -9,15 +9,13 @@
 
   <%= erb :"_post", locals: {post: @question, post_type: "Question" } %>
 
-  <ul>
-    <% @question.answers.each do |answer| %>
-    <li>
-      <%= erb :"_post", locals: { post: answer, post_type: "Answer" } %>
-    </li>
-    <% end %>
-  </ul>
+  <h2 id="answers-header">Answers</h2>
 
- <% if logged_in? %>
+  <% @question.answers.each do |answer| %>
+    <%= erb :"_post", locals: { post: answer, post_type: "Answer" } %>
+  <% end %>
+
+  <% if logged_in? %>
     <div class="new-answer-form">
       <h3>Your Answer</h3>
       <form action="/answers" method="POST">

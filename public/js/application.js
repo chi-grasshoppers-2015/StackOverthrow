@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $('.edit-answer-button > a').on("click", handleEditRequest);
   $('.edit-comment-button > a').on("click", handleCommentEditRequest);
+  $('.add-comment-form').on("submit", handleNewCommentRequest);
 });
 
 var handleEditRequest = function(event) {
@@ -65,4 +66,22 @@ var handleCommentEditRequest = function(event) {
       });
     });
   });
+}
+
+var handleNewCommentRequest = function(event) {
+  event.preventDefault();
+  var url = this.action;
+  var commentBody = $(this).find('textarea').val();
+  var commentableId = $($(this).find('input[type=hidden]')[1]).val();
+  var commentableType = $($(this).find('input[type=hidden]')[0]).val();
+  var commentParams = { body: commentBody, commentable_id: commentableId, commentable_type: commentableType };
+  var newCommentRequest = $.ajax({
+    url: url,
+    method: "post",
+    data: { comment: commentParams }
+  });
+  newCommentRequest.done(function(response) {
+    $('#post-comments-' + commentableId + ' > ul').append(response);
+  });
+  $(this).find('textarea').val("");
 }
