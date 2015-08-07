@@ -47,11 +47,11 @@
   <% end %>
   </div>
   <div id="post-comments-<%= post.id %>" class="post-comments">
-    <ul>
-    <% post.comments.each do |comment| %>
-      <%= erb :"comments/_listing", locals: {comment: comment} %>
-    <% end %>
-    </ul>
+    <div>
+      <% post.comments.each do |comment| %>
+        <%= erb :"comments/_listing", locals: {comment: comment} %>
+      <% end %>
+    </div>
     <% if logged_in? %>
       <form id="post-comment-<%= post.id%>" class="add-comment-form" action="/comments" method="POST">
         <input type="hidden" name="comment[commentable_type]" value="<%= post_type %>" />
