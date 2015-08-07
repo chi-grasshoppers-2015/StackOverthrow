@@ -8,7 +8,7 @@ get '/questions/new' do
     @question = Question.new
     erb :"questions/new"
   else
-    erb :"sessions/new"
+    redirect "sessions/new"
   end
 end
 
