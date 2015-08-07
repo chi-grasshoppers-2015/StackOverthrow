@@ -38,9 +38,13 @@ end
 
 get '/answers/:answer_id/best_answer' do
   @answer = Answer.find(params[:answer_id])
-  all_answers = @answer.question.answers
-  all_answers.each {|answer| answer.best_answer = false}
+  top_answer = @answer.question.answers.find { |answer| answer.best_answer }
+  if top_answer
+    top_answer.best_answer = false
+    top_answer.save
+  end
   @answer.best_answer = true
+  @answer.save
   redirect "/questions/#{@answer.question.id}"
 end
 

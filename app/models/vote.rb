@@ -6,6 +6,6 @@ class Vote < ActiveRecord::Base
 
   def self.tally(post)
     votes_values = post.votes.map { |vote| vote.value}
-    votes_values.reduce(:+)
+    votes_values.reduce(:+) || 0
   end
 end

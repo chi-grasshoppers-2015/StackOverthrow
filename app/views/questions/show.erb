@@ -11,7 +11,7 @@
 
   <h2 id="answers-header">Answers</h2>
 
-  <% @question.answers.each do |answer| %>
+  <% sorted_answer_list(@question).each do |answer| %>
     <%= erb :"_post", locals: { post: answer, post_type: "Answer" } %>
   <% end %>
 
