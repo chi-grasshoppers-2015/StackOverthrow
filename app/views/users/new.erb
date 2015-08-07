@@ -7,6 +7,7 @@
     <input type="text" name="user[email]" value="<%= @user.email %>" placeholder="you@example.org">
     <label for="user_password">Password</label>
     <input type="text" name="user[password]" placeholder="12345">
+    <span class="error"><%= @error %></span>
     <input type="submit" value="Sign up">
   </form>
   <a href="/sessions/new">Sign in</a>

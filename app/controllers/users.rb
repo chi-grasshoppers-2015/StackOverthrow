@@ -9,6 +9,7 @@ post '/users' do
     session[:uid] = @user.id
     redirect '/'
   else
+    @error = "Incomplete field"
     erb :"users/new", layout: :sign_up_in_layout
   end
 end
