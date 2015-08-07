@@ -2,6 +2,7 @@ $(document).ready(function() {
   $('.edit-answer-button > a').on("click", handleEditRequest);
   $(document).on("click", '.edit-comment-button > a', handleCommentEditRequest);
   $('.add-comment-form').on("submit", handleNewCommentRequest);
+  handleUserPage();
 });
 
 var handleEditRequest = function(event) {
@@ -81,7 +82,25 @@ var handleNewCommentRequest = function(event) {
     data: { comment: commentParams }
   });
   newCommentRequest.done(function(response) {
-    $('#post-comments-' + commentableId + ' > ul').append(response);
+    $('#post-comments-' + commentableId + ' > #post_comment_div').append(response);
   });
   $(this).find('textarea').val("");
 }
+
+var handleUserPage = function() {
+  $(".username_default").hide();
+  $(".profile_nav").show();
+  $("#answers").hide();
+  $("#comments").hide();
+  $(".container").on("click", ".tabs li a", function(event){
+    event.preventDefault();
+    $(this).css("border", "none");
+    $("li").removeClass("active");
+    $( this ).parent().addClass( "active" );
+    var tab_id = $(this).attr('href');
+    $("#questions").hide();
+    $("#answers").hide();
+    $("#comments").hide();
+    $(tab_id).show();
+  });
+};
