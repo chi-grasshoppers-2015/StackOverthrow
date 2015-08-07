@@ -235,6 +235,18 @@ footer {
   vertical-align: top;
   display: inline-block;
 }
+
+.edit-comment-button {
+  position: relative;
+  margin-left: 80px;
+}
+
+.edit-comment-button form, .edit-comment-button a {
+  display: inline-block;
+  /*float: right;*/
+  margin: 10px 10px 20px;
+}
+
 #comment-wrapper {
   /*background-color: blue;*/
   margin: 10px 0 10px;
@@ -287,7 +299,7 @@ footer {
 
 .post-comments {
   padding: 5px 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e0e0e0;
   clear: both;
 }
 
@@ -500,3 +512,50 @@ li.profile-user {
 
 
 
+
+/*----------------- new question form -----------------*/
+#form-container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #CFCFCF;
+  background: #fff;
+}
+
+#form-container form {
+  font-size: 13px;
+}
+
+#form-container input {
+  display: block;
+  width: 580px;
+  color: #2a2a28;
+  padding: 8px;
+  border: 1px solid #979797;
+  margin: 5px 0 10px 0;
+}
+
+#form-container label {
+  font-weight: bold;
+}
+
+#form-container textarea {
+  padding: 8px;
+  margin: 5px 0 10px 0;
+  width: 580px;
+  height: 300px;
+  border: 1px solid #979797;
+}
+
+
+#form-container input[type=submit] {
+  text-align: center;
+  background: #07c;
+  color: #fff;
+  border: 2px;
+  border-radius: 3px;
+  width: 240px;
+  padding: 12px 40px;
+  margin: 30px 0 0;
+}
+/*-----------------------------------------------------*/
