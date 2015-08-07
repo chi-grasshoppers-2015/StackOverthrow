@@ -136,13 +136,11 @@ header nav {
   background-color: #E7E7E7;
 }
 
-
 #left h1 {
   font-weight: 400;
   font-size: 22px;
   line-height: 1.3;
 }
-
 
 .question-list {
   list-style: none;
@@ -158,13 +156,12 @@ header nav {
   font-size: 20px;
 }
 
-.question-list li a {
+.question-list li a, .container a {
   text-decoration: none;
   color: #0c65a5;
-
 }
 
-.question-list li a:hover {
+.question-list li a:hover, .container a:hover {
   color: #30a7fc;
 }
 
@@ -183,6 +180,11 @@ footer {
 
 
 /* ---------------------- questions show styles ---------------------------- */
+
+
+.container {
+  padding-bottom: 20px;
+}
 
 .container h1 {
   font-size: 22px;
@@ -203,11 +205,20 @@ footer {
 }
 
 #vote-column {
-  display: inline-block;
-  width: 9.5%;
- /* height: 500px;*/
   /*background-color: green;*/
-  margin-bottom: 20px;
+  display: inline-block;
+  width: 80px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.voting-area {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  /*background-color: yellow;*/
+  display: inline-block;
 }
 
 #post-content {
@@ -219,21 +230,18 @@ footer {
   vertical-align: top;
 }
 
-.voting-area {
-  /*background-color: yellow;*/
-  display: inline-block;
-  width: 10%;
-}
 
 #comment-wrapper {
+  /*background-color: blue;*/
   margin: 10px 0 10px;
   border-bottom: 1px solid #EFEFEF;
   padding: 10px 0 20px;
 }
 
 .comment-body{
+  /*background-color: white;*/
   display: inline-block;
-  width: 80%;
+  width: 60%;
   vertical-align: top;
 }
 
@@ -242,7 +250,7 @@ footer {
 }
 
 .post-comments {
-  background-color: white;
+  /*background-color: white;*/
 }
 
 
@@ -453,4 +461,30 @@ li.profile-user {
 
 
 /* ------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/*---------- font awesome ----------*/
+
+
+#font-awe-button, #font-awe-button span {
+  background: none;
+  background-color: none;
+  border: none;
+  color: #575757;
+}
+
+#font-awe-button:hover, #font-awe-button span:hover {
+  color: #f90;
+}
+/*----------------------------------*/
+
+
+
+
 

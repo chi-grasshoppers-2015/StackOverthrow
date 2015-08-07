@@ -1,5 +1,5 @@
-<li>
-  <section id="vote-comment-column">
+<div id="comment-wrapper">
+  <div id="vote-column">
     <div class="voting-area">
       <span class="up-vote">
         <%= erb :"votes/_up_vote", locals: {post: comment} %>
@@ -11,10 +11,12 @@
         <%= erb :"votes/_down_vote", locals: {post: comment} %>
       </span>
     </div>
-  </section>
-  <div id="comment-body-<%= comment.id %>">
-  <span><%= comment.body %></span> - <%= comment.author_username %> - <%= comment.formatted_post_date %>
   </div>
+
+  <div id="comment-body-<%= comment.id %>" class="comment-body">
+    <span><%= comment.body %></span> - <%= comment.author_username %> - <%= comment.formatted_post_date %>
+  </div>
+
   <div id="<%= comment.id %>"class="edit-comment-button">
     <% if logged_in? && user_is_author(comment.author_id) %>
       <a href="/comments/<%=comment.id%>/edit">Edit</a>
@@ -25,6 +27,6 @@
       </form>
   <% end %>
   </div>
-</li>
+</div>
 
 
