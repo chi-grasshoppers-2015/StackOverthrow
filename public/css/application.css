@@ -365,6 +365,7 @@ footer {
   display: inline-block;
   font-size: 15px;
   font-weight: normal;
+  vertical-align: top;
 }
 
 .date {
@@ -389,7 +390,65 @@ footer {
 .row a{
   color: #0c65a5;
   text-decoration: none;
+  vertical-align: top;
+}
 
+.tab {
+    display: none;
+}
+.tabs {
+    float: left;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 16px;
+    list-style: none;
+
+}
+.tabs li {
+    float: right;
+    margin-right: 16px;
+    padding: 10px 15px;
+    height: 30px;
+    line-height: 30px;
+}
+.tabs li a {
+    color: #666;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+
+.tabs li.active {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-bottom: -1px;
+    height: 31px;
+    padding: 9px 14px;
+    font-weight: 400;
+    border: 1px solid #e0e0e0;
+    border-bottom-color: #fff;
+    border-top: 2px solid #f90;
+}
+
+.tabs li.active a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+li.profile-user {
+  float:left;
+
+}
+
+.profile_nav {
+  display: none;
+
+}
+
+.username_default{
+  padding: 10px;
 }
 
 
