@@ -9,7 +9,7 @@
     <span class="down-vote">
       <%= erb :"votes/_down_vote", locals: {post: post} %>
     </span>
-    <% if post.class == Answer %>
+    <% if logged_in? && post.class == Answer %>
       <% if post.best_answer %>
         <p>✔</p>
       <% elsif current_user.id == post.question.author_id %>
