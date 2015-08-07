@@ -1,9 +1,12 @@
-<h2><%= @user.username %></h2>
 <div class="container">
+  <span class = "username_default"><h2><%= @user.username %></h2></span>
   <div class="profile_nav">
-    <a href="#questions">Questions</a>
-    <a href="#answers">Answers</a>
-    <a href="#comments">Comments</a>
+    <ul class="tabs">
+      <li class= "profile-user"><h2><%= @user.username %></h2></li>
+      <li><a href="#comments">Comments</a></li>
+      <li><a href="#answers">Answers</a></li>
+      <li class="active"><a href="#questions">Questions</a></li>
+    </ul>
   </div>
   <div class="profile_content">
     <div id="questions">
