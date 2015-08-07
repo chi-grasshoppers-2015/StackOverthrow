@@ -288,4 +288,110 @@ footer {
 /* ------------------------------------------------------------------------- */
 
 
+/* ----------------------------USER PROFILE -------------------------------- */
+#questions h4{
+  margin-bottom: 0;
+  color: #222;
+  font-weight: 400;
+}
+
+#answers h4{
+  margin-bottom: 0;
+  color: #222;
+  font-weight: 400;
+}
+
+#comments h4{
+  margin-bottom: 0;
+  color: #222;
+  font-weight: 400;
+}
+
+.count{
+  font-weight: normal;
+  color: #808080;
+}
+
+.profile-question-list{
+  overflow: scroll;
+  height: 300px;
+}
+
+.profile-score{
+  text-align: center;
+  display: inline-block;
+  height: 38px;
+  min-width: 40px;
+  margin: 0 7px 0 0;
+  font-size: 11px;
+  color: #777;
+  padding: 5px 5px 6px 5px;
+}
+.answer-count{
+  text-align: center;
+  display: inline-block;
+  height: 38px;
+  min-width: 40px;
+  margin: 0 7px 0 0;
+  font-size: 11px;
+  color: #777;
+  padding: 5px 5px 6px 5px;
+}
+
+.answered-count{
+  text-align: center;
+  display: inline-block;
+  height: 38px;
+  min-width: 40px;
+  margin: 0 7px 0 0;
+  font-size: 11px;
+  padding: 5px 5px 6px 5px;
+  background-color: #75845c;
+  color: #fff;
+}
+
+.comment-count{
+  text-align: center;
+  display: inline-block;
+  height: 38px;
+  min-width: 40px;
+  margin: 0 7px 0 0;
+  font-size: 11px;
+  color: #777;
+  padding: 5px 5px 6px 5px;
+}
+
+.profile-title {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.date {
+  display: inline-block;
+  color: #999;
+  float:right;
+  font-size: 10px;
+  margin-top: 30px;
+}
+
+
+.profile-answer-list{
+  overflow: scroll;
+  height: 300px;
+}
+
+.row {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 12px 0 10px 0;
+}
+
+.row a{
+  color: #0c65a5;
+  text-decoration: none;
+
+}
+
+
+/* ------------------------------------------------------------------------- */
 
