@@ -231,7 +231,10 @@ footer {
   vertical-align: top;
 }
 
-
+.edit-comment-form {
+  vertical-align: top;
+  display: inline-block;
+}
 #comment-wrapper {
   /*background-color: blue;*/
   margin: 10px 0 10px;

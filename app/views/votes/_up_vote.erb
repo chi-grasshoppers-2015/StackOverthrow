@@ -6,14 +6,10 @@
       <input type="hidden" name="vote[votable_type]" value="<%=post.class%>">
       <input type="hidden" name="vote[voter_id]" value="<%=current_user.id%>">
 
-
       <button type="submit" class="up_arrow" id="font-awe-button">
         <span class="fa fa-caret-up fa-2x"></span>
       </button>
       <!-- <input class="up_arrow_highlight" type="submit" value="UP1"> -->
-
-
-
     </form>
    <% elsif match_voter_id(post) && find_vote_value(post) == -1 %>
     <form action="/votes/<%= find_vote(post).id%>" method="POST">
@@ -28,6 +24,7 @@
       </button>
       <!-- <input class="up_arrow" type="submit" value="UP2"> -->
     </form>
+
    <% else %>
     <form action="/votes" method="POST">
       <input type="hidden" name="vote[votable_id]" value="<%=post.id%>">
@@ -39,8 +36,6 @@
         <span class="fa fa-caret-up fa-2x"></span>
       </button>
       <!-- <input class="up_arrow" type="submit" value="UP3"> -->
-
-
     </form>
   <% end %>
 <% end %>
