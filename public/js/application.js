@@ -82,7 +82,7 @@ var handleNewCommentRequest = function(event) {
     data: { comment: commentParams }
   });
   newCommentRequest.done(function(response) {
-    $('#post-comments-' + commentableId + ' > ul').append(response);
+    $('#post-comments-' + commentableId + ' > #post_comment_div').append(response);
   });
   $(this).find('textarea').val("");
 }
