@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('.edit-answer-button > a').on("click", handleEditRequest);
-  $('.edit-comment-button > a').on("click", handleCommentEditRequest);
+  $(document).on("click", '.edit-comment-button > a', handleCommentEditRequest);
   $('.add-comment-form').on("submit", handleNewCommentRequest);
 });
 
