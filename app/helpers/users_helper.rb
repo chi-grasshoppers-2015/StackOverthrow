@@ -16,7 +16,7 @@ helpers do
 
     case ad_num
     when 1
-      "<h5>Nickel ads</h5>
+      "<h5>Nickle ads</h5>
       <p>Need to spend extra money?</p>
       <p>Email at nbkincaid@gmail.com for ways to get rid of excess cash.</p>"
     when 2
@@ -36,9 +36,9 @@ helpers do
       <p>Got chicken brah?</p>
       <p>Email at connor@chickens4lyfe.com for eggselent ways to give up those chickens brahhhhh.</p>"
     when 6
-      "<h5>Nickle ads</h5>
+      "<h5>Connorle ads</h5>
       <p>Need to spend extra money on misspellings</p>
-      <p>Email at nbkincaid@gmail.com for ways to get rid of excess spell checks.</p>"
+      <p>Email at ccring@gmail.com for ways to get rid of excess spell checks.</p>"
     end
   end
 
