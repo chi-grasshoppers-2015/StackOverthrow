@@ -5,6 +5,7 @@
     <input type="text" name="user[username]" placeholder="nick.for.president">
     <label for="user_password">Password</label>
     <input type="password" name="user[password]" placeholder="12345">
+    <span class="error"><%= @error %></span>
     <input type="submit" value="Log in">
   </form>
   <a href="/users/new">Create an account</a>
